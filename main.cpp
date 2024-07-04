@@ -13,18 +13,16 @@ struct Meal {
 	}
 };
 
-class Iterate {
+class Prompt {
 public:
 	int userStart;
 	bool program = true;
 	Meal entry;
-	int first = 1;
 
 	void suma() {
 		while(program) {
-			if(first = 1) {
-			std::cout << "enter 1 or 0 " << std::endl;
-			std::cin >> userStart;
+			std::cout << "1 or 0 " << std::endl;
+			std:: cin >> userStart;
 				if(userStart == 1) {
 				entry.meal();
 					} else if (userStart == 0) {
@@ -32,13 +30,24 @@ public:
 					program = false;
 						} else {
 						std::cout << "Make sure you type either 1 or 0 " << std::endl;
-				}
 			}
 		}
 	}
 };
 
+class Loop {
+public:
+	Prompt test1;
+	int start = 1;
+	
+	void display() {
+	if(start = 1) {
+		test1.suma();
+		}
+	}
+};
+
 int main(int argc, char* argv[]) {
-	Iterate test;
-	test.suma();
+	Loop test;
+	test.display();
 }
