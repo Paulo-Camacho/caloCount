@@ -13,7 +13,7 @@ struct Meal {
 	}
 };
 
-class Prompt {
+class Loop{
 public:
 	int userStart;
 	bool program = true;
@@ -21,8 +21,6 @@ public:
 
 	void suma() {
 		while(program) {
-			std::cout << "1 or 0 " << std::endl;
-			std:: cin >> userStart;
 				if(userStart == 1) {
 				entry.meal();
 					} else if (userStart == 0) {
@@ -35,19 +33,23 @@ public:
 	}
 };
 
-class Loop {
+class Prompt{
 public:
-	Prompt test1;
+	Loop test1;
 	int start = 1;
 	
 	void display() {
 	if(start = 1) {
+		std::cout << "1 to start/continue or 0 to quit " << std::endl;
+		std::cin >> userStart;
 		test1.suma();
+		} else {
+			test1.suma();
 		}
 	}
 };
 
 int main(int argc, char* argv[]) {
-	Loop test;
+	Prompt test;
 	test.display();
 }
