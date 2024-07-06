@@ -21,9 +21,11 @@ public:
 
 	void suma() {
 		while(program) {
-				if(userStart == 1) {
+		std::cout << "1 to start/continue or 0 to quit " << std::endl;
+		std::cin >> userStart;
+				if(userStart = 1) {
 				entry.meal();
-					} else if (userStart == 0) {
+					} else if (userStart = 0) {
 					std::cout << "Have a good day! " << std::endl;
 					program = false;
 						} else {
@@ -35,17 +37,9 @@ public:
 
 class Prompt{
 public:
-	Loop test1;
-	int start = 1;
-	
+	Loop menu;
 	void display() {
-	if(start = 1) {
-		std::cout << "1 to start/continue or 0 to quit " << std::endl;
-		std::cin >> userStart;
-		test1.suma();
-		} else {
-			test1.suma();
-		}
+		menu.suma();	
 	}
 };
 
