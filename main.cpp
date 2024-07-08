@@ -21,17 +21,19 @@ class Menu {
 public:
     Meal entry;
     int question = 0;
-    int  pass = 0;
+    int pass = 0;
     void display(bool& program) {  // Pass by reference
         if(pass == 0) {
-            std::cout << "Hello! Would you like to count? " << std::endl; 
+            std::cout << "Hello! Would you like to count? 1/yes 0/no" << std::endl; 
             pass ++;
             std::cin >> question;
         }
+        if(question == 0) {
+            std::cout << "Have a good day! " << std::endl;
+            program = false;
+        }
         if(question == 1) {
-            std::cout << "1" << std::endl;
-        } else {
-            std::cout << "2" << std::endl;
+            entry.meal();
             program = false;
         }
     }
