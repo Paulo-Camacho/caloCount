@@ -20,20 +20,20 @@ struct Meal {
 class Menu {
 public:
     Meal entry;
-    int question = 1;
-    int iteration;
+    int question = 0;
+    int  pass = 0;
     void display(bool& program) {  // Pass by reference
+        if(pass == 0) {
+            std::cout << "Hello! Would you like to count? " << std::endl; 
+            pass ++;
+            std::cin >> question;
+        }
         if(question == 1) {
-            std::cout << "Enter 1 to start, 0 to quit " << std::endl;
-            std::cin >> iteration;
-            question = 0;
-            }        
-            if(iteration == 1) {
-                entry.meal();  
-            } else if (iteration == 0) {
-                std::cout << "Good bye, have a good day! " << std::endl;
-                program = false;
-            }
+            std::cout << "1" << std::endl;
+        } else {
+            std::cout << "2" << std::endl;
+            program = false;
+        }
     }
 };
 
@@ -41,20 +41,10 @@ class Loop {
 public:
     Menu start;
     bool program = true;
-    bool cont;
 
     void suma() {
         while(program) {
             start.display(program);
-            std::cout << " " << std::endl;
-            std::cout << "Continue? 1/0" << std::endl;
-            std::cin >> cont;
-            if(cont == 1) {
-                start.display(program);
-            } else {
-                std::cout << "Have a good day! " << std::endl;
-                program = false;
-            } 
         }
     }
 };
