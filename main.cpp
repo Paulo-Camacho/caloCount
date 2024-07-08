@@ -20,23 +20,30 @@ struct Meal {
 class Menu {
 public:
     Meal entry;
-    int question = 0;
+    int prompt = 0;
     int pass = 0;
+    int resume = 0;
     void display(bool& program) {  // Pass by reference
-        if(pass == 0) {
+        if(prompt == 0) {
             std::cout << "Hello! Would you like to count? 1/yes 0/no" << std::endl; 
+            std::cin >> prompt;
             pass ++;
-            std::cin >> question;
         }
-        if(question == 0) {
+        if(pass == 0) {
             std::cout << "Have a good day! " << std::endl;
             program = false;
-        }
-        if(question == 1) {
+        } else if(pass == 1) {
             entry.meal();
+        } else {
+            std::cout << "Make sure to enter EITHER 1 or 0 " << std::endl;
             program = false;
         }
-    }
+
+        if(pass == 1) { 
+            std::cout << "Would you like to continue? " << std::endl;
+            std::cin >> pass; 
+        }
+        }
 };
 
 class Loop {
