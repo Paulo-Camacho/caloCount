@@ -5,6 +5,8 @@ struct Meal {
     int calorie = 0;
     int protein = 0;
     int day = 1;
+    int totalCalories = 0;
+    int totalProtein = 0;
 
     void mealInput() {
         std::cout << " " << std::endl;
@@ -15,6 +17,11 @@ struct Meal {
         std::cout << " " << std::endl;
         std::cout << "Meal - " << day << "\ncalories: " << calorie << "\nprotein: " << protein << std::endl;
         day++;
+        totalCalories += calorie;
+        totalProtein += protein;
+
+        std::cout << "Total protein " << totalProtein << " Total calories " << totalCalories << std::endl;
+
     }
 };
 
@@ -25,9 +32,6 @@ public:
     int pass   = 0;
     int resume = 0;
 
-    std::vector<Meal> mealLog;
-    int totalCalories = 0;
-    int totalProtein  = 0;
 
     void display(bool& program) {  // Pass by reference
         if(prompt == 0) {
@@ -41,9 +45,6 @@ public:
             program = false;
         } else if(pass == 1) {
             entry.mealInput();
-            mealLog.push_back(entry);
-            totalCalories += entry.protein;
-            totalProtein += entry.calorie;
         } else {
             std::cout << "Make sure to enter EITHER 1 or 0 " << std::endl;
             program = false;
@@ -54,7 +55,6 @@ public:
             std::cout << "Continue to add? 1/yes 0/no " << std::endl;
             std::cin >> pass; 
         }
-        std::cout << "Protein " << entry.protein << "Calorie " << entry.calorie << std::endl;
         }
 };
 
