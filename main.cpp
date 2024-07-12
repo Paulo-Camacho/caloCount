@@ -3,11 +3,13 @@
 #include <vector>
 
 struct Meal {
+
     int calorie = 0;
     int protein = 0;
-    int day = 1;
+    int day     = 1;
+
     int totalCalories = 0;
-    int totalProtein = 0;
+    int totalProtein  = 0;
 
     void mealInput() {
         std::cout << " " << std::endl;
@@ -39,10 +41,11 @@ struct Meal {
 class Menu {
 public:
     Meal entry;
+
     int prompt = 0;
     int pass   = 0;
 
-    void display(bool& program) {  // Pass by reference
+    void display(bool& program) {  
         if(prompt == 0) {
             std::cout << "Hello! Would you like to count? 1/yes 0/no " << std::endl;
             while (!(std::cin >> pass) || (pass != 0 && pass != 1)) {
