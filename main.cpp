@@ -19,8 +19,8 @@ struct Meal {
         day++;
         totalCalories += calorie;
         totalProtein += protein;
-
-        std::cout << "Total protein " << totalProtein << " Total calories " << totalCalories << std::endl;
+        std::cout << " " << std::endl;
+        std::cout << "Total protein " << totalProtein << "\nTotal calories " << totalCalories << std::endl;
 
     }
 };
